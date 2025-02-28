@@ -39,6 +39,8 @@ public class WeatherForecastController : ControllerBase
     //Teste de Exemplo
     public void Teste()
     {
+        var user = new User();
+
         Photo photo = new("", new User());
     }
 }
