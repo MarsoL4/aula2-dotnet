@@ -1,26 +1,36 @@
-﻿namespace TDSKP.API.Persistence
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TDSKP.API.Persistence
 {
     public class Photo
     {
-        public  int Id { get; private set; } //Somente a classe poderá settar o Id
+        [Key]
+        public  Guid Id { get; private set; } //Somente a classe poderá settar o Id
 
-        public User User { get; set; }
+        [Required]
+        public User User { get;  private set; }
 
-        public Uri Uri { get; set; }
+        [Required]
+        [Url]
+        public string Url { get; private set; }
 
-        public int Length { get; set; }
+        [Required]
+        public int Lenght { get; set; }
 
-        public DateTime Date { get; set; }
+        [Required]
+        public DateTime Date { get; private set; }
 
-        public Photo() //Gerador automático de Id
+        public Photo(string url, User user)
         {
-            Id = GenrateId();
+            if (url == string.Empty) throw new Exception();
+
+            Id = Guid.NewGuid();
             Date = DateTime.Now;
-        }
+            Url = url;
 
-        private int GenrateId()
-        {
-            throw new NotImplementedException();
+            User = user;
         }
     }
 }
