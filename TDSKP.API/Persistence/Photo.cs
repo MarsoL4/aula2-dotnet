@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TDSKP.API.Persistence
 {
+    [Table("Photos")]
     public class Photo
     {
         [Key]
