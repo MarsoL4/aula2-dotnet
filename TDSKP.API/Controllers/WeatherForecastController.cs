@@ -40,7 +40,5 @@ public class WeatherForecastController : ControllerBase
     public void Teste()
     {
         Photo photo = new Photo();
-        photo.Date = DateTime.Now.AddDays(-1);
-        photo.Id = ;
     }
 }

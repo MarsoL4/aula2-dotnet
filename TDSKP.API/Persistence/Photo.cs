@@ -15,6 +15,7 @@
         public Photo() //Gerador automático de Id
         {
             Id = GenrateId();
+            Date = DateTime.Now;
         }
 
         private int GenrateId()
