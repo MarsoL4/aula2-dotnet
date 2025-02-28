@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using TDSKP.API.Persistence;
 
 namespace TDSKP.API.Controllers;
 
@@ -33,5 +34,13 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
+    }
+
+    //Teste de Exemplo
+    public void Teste()
+    {
+        Photo photo = new Photo();
+        photo.Date = DateTime.Now.AddDays(-1);
+        photo.Id = ;
     }
 }
