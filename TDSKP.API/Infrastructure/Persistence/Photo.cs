@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TDSKP.API.Persistence
+namespace TDSKP.API.Infrastructure.Persistence
 {
     [Table("Photos")]
     public class Photo
@@ -22,7 +22,7 @@ namespace TDSKP.API.Persistence
 
         public Photo(string url, User user)
         {
-            if (url == string.Empty) throw new Exception();
+            if (url == string.Empty) throw new Exception("Url Vazia");
 
             Id = Guid.NewGuid();
             Date = DateTime.Now;

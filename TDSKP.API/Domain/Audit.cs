@@ -2,7 +2,7 @@
 
 namespace TDSKP.API.Domain
 {
-    public class Audictor
+    public class Audit
     {
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
