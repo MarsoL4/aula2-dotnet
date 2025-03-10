@@ -17,6 +17,10 @@ namespace TDSKP.API.Infrastructure.Mappings
             builder
                 .Property(user => user.Name)
                 .IsRequired();
+
+            builder
+                .Property(user => user.Status)
+                .IsRequired();
         }
     }
 }
