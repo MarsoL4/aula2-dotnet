@@ -23,7 +23,7 @@ namespace TDSKP.API.Infrastructure.Persistence
             Date = DateTime.Now;
             Url = url;
 
-            User = user;
+            //User = user;
         }
     }
 }
