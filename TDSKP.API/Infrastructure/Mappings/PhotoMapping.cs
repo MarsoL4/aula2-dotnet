@@ -20,6 +20,7 @@ namespace TDSKP.API.Infrastructure.Mappings
 
             builder
                 .Property(photo => photo.Url)
+                .HasMaxLength(200)
                 .IsRequired();
 
             builder

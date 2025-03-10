@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using TDSKP.API.Infrastructure.Contexts;
@@ -11,9 +12,11 @@ using TDSKP.API.Infrastructure.Contexts;
 namespace TDSKP.API.Migrations
 {
     [DbContext(typeof(PhotosContext))]
-    partial class PhotosContextModelSnapshot : ModelSnapshot
+    [Migration("20250310145029_vPhotos")]
+    partial class vPhotos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
