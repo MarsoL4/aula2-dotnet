@@ -16,7 +16,7 @@ namespace TDSKP.API.Infrastructure.Mappings
 
             /*builder
                 .Property(photo=> photo.User)
-                .IsRequired();*/
+                .IsRequired();;*/
 
             builder
                 .Property(photo => photo.Url)
