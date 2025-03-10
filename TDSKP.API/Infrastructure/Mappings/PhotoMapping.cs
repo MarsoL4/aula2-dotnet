@@ -8,7 +8,23 @@ namespace TDSKP.API.Infrastructure.Mappings
     {
         public void Configure(EntityTypeBuilder<Photo> builder)
         {
-            throw new NotImplementedException();
+            builder
+                .ToTable("Photos");
+
+            builder
+                .HasKey("Id");
+
+            builder
+                .Property(photo=> photo.User)
+                .IsRequired();
+
+            builder
+                .Property(photo => photo.Url)
+                .IsRequired();
+
+            builder
+                .Property(photo => photo.Date)
+                .IsRequired();
         }
     }
 }
