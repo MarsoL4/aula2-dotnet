@@ -4,6 +4,7 @@
     {
         Active,
         Blocked,
-        Inactive
+        Inactive,
+        Error
     }
 }
