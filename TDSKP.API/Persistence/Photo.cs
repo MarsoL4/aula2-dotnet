@@ -18,9 +18,6 @@ namespace TDSKP.API.Persistence
         public string Url { get; private set; }
 
         [Required]
-        public int Lenght { get; set; }
-
-        [Required]
         public DateTime Date { get; private set; }
 
         public Photo(string url, User user)
