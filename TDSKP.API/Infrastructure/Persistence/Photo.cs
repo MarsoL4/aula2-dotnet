@@ -15,7 +15,7 @@ namespace TDSKP.API.Infrastructure.Persistence
 
         public DateTime Date { get; private set; }
 
-        public Photo(string url, User user)
+        public Photo(string url)
         {
             if (url == string.Empty) throw new Exception("Url Vazia");
 

@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using TDSKP.API.Infrastructure.Persistence;
-using TDSKP.API.Persistence;
 
 namespace TDSKP.API.Controllers;
 
@@ -42,6 +41,6 @@ public class WeatherForecastController : ControllerBase
     {
         var user = new User();
 
-        Photo photo = new("", new User());
+        //Photo photo = new("", new User());
     }
 }
