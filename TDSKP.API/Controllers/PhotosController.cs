@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 using TDSKP.API.Infrastructure.Contexts;
 using TDSKP.API.Infrastructure.Persistence;
 
@@ -18,6 +19,8 @@ namespace TDSKP.API.Controllers
 
         // GET: api/Photos
         [HttpGet]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.ServiceUnavailable)]
         public async Task<ActionResult<IEnumerable<Photo>>> GetPhotos()
         {
             return await _context.Photos.ToListAsync();
