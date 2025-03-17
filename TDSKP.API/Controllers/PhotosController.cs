@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TDSKP.API.Infrastructure.Contexts;
 using TDSKP.API.Infrastructure.Persistence;
@@ -40,37 +35,6 @@ namespace TDSKP.API.Controllers
             }
 
             return photo;
-        }
-
-        // PUT: api/Photos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutPhoto(Guid id, Photo photo)
-        {
-            if (id != photo.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(photo).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PhotoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
         }
 
         // POST: api/Photos
