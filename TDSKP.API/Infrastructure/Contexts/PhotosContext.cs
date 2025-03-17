@@ -13,5 +13,11 @@ namespace TDSKP.API.Infrastructure.Contexts
         {
             modelBuilder.ApplyConfiguration(new PhotoMapping());
         }
+
+        //EFCore.NamingConventions
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSnakeCaseNamingConvention();
+        //}
     }
 }

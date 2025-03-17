@@ -8,8 +8,6 @@ namespace TDSKP.API.Infrastructure.Persistence
     {
         public  Guid Id { get; private set; } //Somente a classe poderá settar o Id
 
-        //public User User { get;  private set; }
-
         [Url]
         public string Url { get; private set; }
 
@@ -22,8 +20,6 @@ namespace TDSKP.API.Infrastructure.Persistence
             Id = Guid.NewGuid();
             Date = DateTime.Now;
             Url = url;
-
-            //User = user;
         }
     }
 }
