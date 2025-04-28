@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using TDSKP.API.Domain;
+﻿using TDSKP.API.Domain;
 using TDSKP.API.Domain.Enums;
+using TDSPK.API.Infrastructure.Persistence;
 
 namespace TDSKP.API.Infrastructure.Persistence
 {

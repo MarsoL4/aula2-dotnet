@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
-using TDSKP.API.Infrastructure.Contexts;
+using TDSPK.API.Infrastructure.Contexts;
 
 namespace TDSPK.API
 {
