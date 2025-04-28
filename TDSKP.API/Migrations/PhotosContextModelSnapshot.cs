@@ -36,9 +36,54 @@ namespace TDSKP.API.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("NVARCHAR2(200)");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("RAW(16)");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Photos", (string)null);
+                });
+
+            modelBuilder.Entity("TDSKP.API.Infrastructure.Persistence.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("RAW(16)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("TIMESTAMP(7)");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("TIMESTAMP(7)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("TDSKP.API.Infrastructure.Persistence.Photo", b =>
+                {
+                    b.HasOne("TDSKP.API.Infrastructure.Persistence.User", "User")
+                        .WithMany("Photos")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("TDSKP.API.Infrastructure.Persistence.User", b =>
+                {
+                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }

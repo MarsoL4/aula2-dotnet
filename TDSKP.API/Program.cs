@@ -27,12 +27,12 @@ namespace TDSPK.API
                     Description = "API da turma PK-2025 de Fevereiro",
                     Contact = new OpenApiContact
                     {
-                        Name = "Enzo Marsola",
-                        Email = "enzo@fiap.com.br"
+                        Name = "Thiago Keller",
+                        Email = "profthiago.vicco@fiap.com.br"
                     }
                 });
 
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";  //TDSPK.API.xml
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
                 //incluir os comentarios no SWAGGER

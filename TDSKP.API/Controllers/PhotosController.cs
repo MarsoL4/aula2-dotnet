@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
-using TDSKP.API.Infrastructure.Contexts;
-using TDSKP.API.Infrastructure.Persistence;
+using TDSPK.API.DTO;
+using TDSPK.API.Infrastructure.Contexts;
+using TDSPK.API.Infrastructure.Persistence;
 
 namespace TDSPK.API.Controllers
 {
@@ -68,8 +69,16 @@ namespace TDSPK.API.Controllers
         /// <param name="photo"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<Photo>> PostPhoto(Photo photo)
+        public async Task<ActionResult<Photo>> PostPhoto(PhotoRequest photoRequest)
         {
+
+            var user = _context.User.SingleOrDefault(x => x.Id == photoRequest.UserId);
+
+            if (user is null) throw new Exception("Usuario nao existe");
+
+
+            var photo = new Photo(photoRequest.Url, user.Id);
+
             _context.Photos.Add(photo);
             await _context.SaveChangesAsync();
 
